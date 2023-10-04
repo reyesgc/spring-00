@@ -1,0 +1,5 @@
+package com.midominio.coches.app.web.model;
+
+public class CochesModel {
+
+}

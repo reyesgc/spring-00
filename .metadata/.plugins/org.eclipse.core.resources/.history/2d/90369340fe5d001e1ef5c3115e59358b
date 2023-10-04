@@ -1,0 +1,33 @@
+package com.midominio.animales.web.app.model;
+
+public class Animal {
+	private String tipo;
+	private int peso;
+	private double precio;
+	public Animal(String tipo, int peso, double precio) {
+		super();
+		this.tipo = tipo;
+		this.peso = peso;
+		this.precio = precio;
+	}
+	public String getTipo() {
+		return tipo;
+	}
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+	public int getPeso() {
+		return peso;
+	}
+	public void setPeso(int peso) {
+		this.peso = peso;
+	}
+	public double getPrecio() {
+		return precio;
+	}
+	public void setPrecio(double precio) {
+		this.precio = precio;
+	}
+	
+	
+}

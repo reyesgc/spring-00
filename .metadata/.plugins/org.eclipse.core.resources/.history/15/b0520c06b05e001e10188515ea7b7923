@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title th:text="${titulo}"></title>
+</head>
+<body>
+	<h1 th:text="{cabecera}"></h1>
+	<p th:if="${animales.isEmpty()}">
+		<span th:text="${testoListaVacia}"></span>
+	</p>
+</body>
+<table th:if="${!animales.isEmpty()}">
+	<theader>
+		<tr>
+			<td><strong>Tipo</strong></td>
+			<td><strong>Precio (€)</strong></td>
+			<td><strong>Peso (gr.)</strong></td>
+		</tr>
+	</theader>
+	<tbody>
+		<tr th:each="animal : ${animales}">
+			<td th:text="${animal.tipo}"></td>
+			<td th:text="${animal.precioEuros}"></td>
+			<td th:text="${animal.pesoGramos}"></td>
+		</tr>
+	</tbody>
+
+
+</table>
+</html>

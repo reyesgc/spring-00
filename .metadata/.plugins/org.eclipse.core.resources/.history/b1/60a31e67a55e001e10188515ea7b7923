@@ -1,0 +1,71 @@
+package com.midominio.animales.web.app.controller;
+
+
+import org.springframework.stereotype.Controller;
+
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.midominio.animales.web.app.model.Animal;
+import java.util.ArrayList;
+import java.util.List;
+
+@Controller
+@RequestMapping("/animales")
+public class AnimalController {
+	
+	@GetMapping("/ungato")
+	public String gato(Model model) {
+		model.addAttribute("titulo", "Un gato");
+		model.addAttribute("cabecera", "Mostrando un gato");
+		model.addAttribute("texto", "Estos son los datos de mi gato:");
+		Animal gato = new Animal ("gato", 2450, 75.00);
+		model.addAttribute("tipo", "Tipo:" + gato.getTipo());
+		model.addAttribute("peso", "Peso:" + gato.getPeso());
+		model.addAttribute("precio", "Precio:" + gato.getPrecio());
+		return "animales/gato";
+	}
+	
+	@GetMapping("/ningungato")
+	public String ningungato(Model model) {
+		Animal gato = null;
+		model.addAttribute("titulo", "Ningun gato");
+		model.addAttribute("cabecera", "Mostrando ningun gato");
+		model.addAttribute("texto", "No hay ningun gato para mostrar su información");
+		return "animales/gato";
+	}
+	
+	@GetMapping("/lista")
+	public String listaAnimales(Model model) {
+		List<Animal> listaAnimales = new ArrayList<>();
+		listaAnimales.add(new Animal("gato", 2631, 80.35));
+		listaAnimales.add(new Animal("perro", 30652, 145.23));
+		listaAnimales.add(new Animal("loro", 1230, 800.64));
+		model.addAttribute("milistaAnimales", listaAnimales);
+		model.addAttribute("titulo", "Lista de animales");
+		model.addAttribute("cabecera", "Mostrando lista de animales");
+		model.addAttribute("texto", "Estos son los datos de la lista de animales:");
+		return "animales/lista";
+	}
+	
+	@ModelAttribute("/milista1")
+	public List<Animal> listaAnimales1(){
+		List<Animal> animales = new ArrayList<>();
+		animales.add(new Animal("gato", 2840, 50.26));
+		animales.add(new Animal("perro", 50236, 700.25));
+		animales.add(new Animal("perro", 5024, 400.25));
+		return animales;		
+	} 
+	@ModelAttribute("/milista2")
+	public List<Animal> listaAnimales2(){
+		List<Animal> animales = new ArrayList<>();
+		animales.add(new Animal("perro", 1203, 90.36));
+		animales.add(new Animal("gato", 4520, 50.25));
+		animales.add(new Animal("loro", 800, 90.42));
+		animales.add(new Animal("perro", 8023, 52.12));
+		animales.add(new Animal("gato", 5210, 12.36));
+		return animales;		
+	} 	
+}

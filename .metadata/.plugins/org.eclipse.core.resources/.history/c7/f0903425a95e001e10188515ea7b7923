@@ -1,0 +1,68 @@
+package com.midominio.animales.web.app.controller;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import com.midominio.animales.web.app.model.Animal;
+import java.util.ArrayList;
+import java.util.List;
+
+@Controller
+@RequestMapping("/animales")
+public class Nivel03Controller {
+	//localhost:8080/animales/listado_flexible
+	
+	@Value("titulo")
+	private String tituloNavegador;
+	
+	@GetMapping("/ejemplo")
+	public String m(Model model) {
+		model.addAttribute("TituloNavegador", tituloNavegador);
+		return "animales/ejemplo1";
+	}
+	
+	public List<Animal> listadoCompletoAnimales() {
+		List<Animal> animales = new ArrayList<>();
+		animales.add(new Animal(50, 2_350, "gato"));
+		animales.add(new Animal(1250, 17_220, "perro"));
+		animales.add(new Animal(75, 3_500, "perro"));
+		animales.add(new Animal(235, 5_400, "gato"));
+		animales.add(new Animal(172, 50_300, "perro"));
+		animales.add(new Animal(350, 75_300, "perro"));
+		animales.add(new Animal(140, 9_044, "gato"));
+		animales.add(new Animal(800, 18_333, "perro"));
+		animales.add(new Animal(1500, 9_430, "gato"));
+		animales.add(new Animal(13800, 18_050, "mono"));
+		animales.add(new Animal(100, 190, "pájaro"));
+		animales.add(new Animal(19500, 25_800, "perro"));
+		animales.add(new Animal(17200, 18_600, "mono"));
+		animales.add(new Animal(4000, 9_300, "gato"));
+		animales.add(new Animal(230, 200, "pájaro"));
+		animales.add(new Animal(8700, 6_500, "gato"));
+		animales.add(new Animal(16900, 17_500, "mono"));
+		animales.add(new Animal(14700, 11_500, "perro"));
+		animales.add(new Animal(6000, 220, "pájaro"));
+		animales.add(new Animal(9200, 70, "camaleón"));
+		animales.add(new Animal(6600, 200, "pájaro"));
+		animales.add(new Animal(4300, 9_300, "gato"));
+		animales.add(new Animal(8100, 20_300, "mono"));
+		animales.add(new Animal(9800, 160, "pájaro"));
+		animales.add(new Animal(7700, 19_200, "perro"));
+		return animales;
+	}
+	
+	
+	@GetMapping({ "/listado-flexible", "listadoflexible" })
+	public String listadoFlexible(Model model) {
+
+		model.addAttribute("cabecera",
+				"Mostrando lista completa de " + this.listadoCompletoAnimales().size() + " animales");
+		model.addAttribute("textoListaVacia", "No hay ningún animal que mostrar.");
+		model.addAttribute("texto", "Esta es la lista de animales");
+		model.addAttribute("animales", listadoCompletoAnimales());
+
+		return "animales/lista-animales";
+	}
+}

@@ -1,0 +1,5 @@
+package com.midominio.proyecto00.web.app.controller;
+
+public class Cartas {
+
+}

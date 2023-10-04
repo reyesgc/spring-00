@@ -1,0 +1,34 @@
+package com.midominio.animales.web.app.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.midominio.animales.web.app.model.Animal;
+
+@Controller
+@RequestMapping("/animales")
+public class AnimalController {
+	
+	@GetMapping("/ungato")
+	public String gato(Model model) {
+		model.addAttribute("titulo", "Un gato");
+		model.addAttribute("cabecera", "Mostrando un gato");
+		model.addAttribute("texto", "Estos son los datos de mi gato:");
+		Animal gato = new Animal ("gato", 2450, 75.00);
+		model.addAttribute("tipo", "Tipo:" + gato.getTipo());
+		model.addAttribute("peso", "Peso:" + gato.getPeso());
+		model.addAttribute("precio", "Precio:" + gato.getPrecio());
+		return "animales/gato";
+	}
+	
+	@GetMapping("/ningungato")
+	public String ningungato(Model model) {
+		Animal gato = null;
+		model.addAttribute("titulo", "Ningun gato");
+		model.addAttribute("cabecera", "Mostrando ningun gato");
+		model.addAttribute("texto", "No hay ningun gato para mostrar su información");
+		return "animales/gato";
+	}
+}

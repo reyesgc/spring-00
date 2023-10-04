@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title th:text="${titulo}"></title>
+</head>
+<body>
+	<h1 th:text="${cabecera}"></h1>
+	<p th:text="${texto}"></p>
+	<table>
+		<theader>
+			<tr>
+				<td>Tipo</td>
+				<td>Precio</td>
+				<td>Peso</td>
+			</tr>
+		</theader>
+		<tbody>
+			<tr th:each="animal : ${milistaAnimales}">
+				<td th:text="${animal.tipo}"></td>
+				<td th:text="${animal.precio}"></td>
+				<td th:text="${animal.peso}"></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

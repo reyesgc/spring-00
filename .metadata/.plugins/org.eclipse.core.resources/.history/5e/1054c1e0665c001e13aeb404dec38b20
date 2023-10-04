@@ -1,0 +1,5 @@
+package com.midominio.proyecto01.web.app.model;
+
+public class Animal {
+
+}

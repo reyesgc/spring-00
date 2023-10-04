@@ -1,0 +1,12 @@
+package com.midominio.proyecto00.web.app.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+
+@org.springframework.stereotype.Controller
+
+public class Controller {
+	@GetMapping("/linkweb")
+	public String n2() {
+		return "vista";
+	}
+}

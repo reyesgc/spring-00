@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title th:text="${titulo}"></title>
+</head>
+<body>
+	<h1 th:text="${cabecera}"></h1>
+	<p th:text="${parrafo}"></p>
+	<table>
+		<tr>
+			<th>Id</th>
+			<th>Nombre</th>
+			<th>Descripción</th>
+			<th>Tipo</th>
+			<th>Numero de Creditos</th>
+			<th>Numero de Alumnos</th>
+		</tr>
+		<tr th:each="asignatura: ${listadoasignaturas}">
+			<td th:text="${asignatura.id}"></td>
+			<td th:text="${asignatura.nombre}"></td>
+			<td th:text="${asignatura.descripcion}"></td>
+			<td th:text="${asignatura.tipo}"></td>
+			<td th:text="${asignatura.numeroCreditos}"></td>
+			<td th:text="${asignatura.numeroalum}"></td>
+		</tr>
+	</table>
+</body>
+</html>

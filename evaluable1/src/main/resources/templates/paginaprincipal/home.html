@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<title th:text="${titulo}"></title>
+</head>
+<body>
+	<header>
+		<img src="https://th.bing.com/th?id=OIP.1B9fkSjQ5Aw-6n4bOGevowHaEL&w=333&h=187&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" alt="Logo de Mi Sitio Web">
+	</header>
+	<h1 th:text="${cabecera}"></h1>
+	<p th:text="${parrafo1}"></p>
+	<p th:text="${parrafo2}"></p>
+	<p th:text="${parrafo3}"></p>
+	<a href="http://localhost:8080/asignatura/listado/con">Listado con número de alumnos</a>
+	<br>
+	<a href="http://localhost:8080/asignatura/listado/sin">Listado sin número de alumnos</a>
+</body>
+</html>

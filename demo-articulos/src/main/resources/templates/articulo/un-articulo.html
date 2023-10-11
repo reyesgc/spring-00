@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title th:text="${titulo}"></title>
+</head>
+<body>
+	<h1 th:text="${tituloh1}"></h1>
+	<p th:if="${articulo == null}">No hay elemento articulo que mostrar</p>
+	<ul th:if="${articulo != null}">
+		<li th:text="${'Cantidad:' + articulo.cantidad}"></li>
+		<li th:text="${'Marca:' + articulo.marca}"></li>
+		<li th:text="${'Modelo:' + articulo.modelo}"></li>
+		<li th:text="${'Tipo:' + articulo.tipo}"></li>
+		<li th:text="${'Precio:' + articulo.precio}"></li>
+	</ul>
+</body>
+</html>

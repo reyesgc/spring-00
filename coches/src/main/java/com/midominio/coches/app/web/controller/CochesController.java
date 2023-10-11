@@ -38,7 +38,7 @@ public class CochesController {
 		coches.add(new Coche(7041, "KIA", "Rojo", 01/05/06));
 		coches.add(new Coche(6512, "Jaguar", "Azul marino", 19/07/22));
 		coches.add(new Coche(1450, "Suzuki", "Verde oscuro", 13/04/15));
-		coches.add(new Coche(5210, "Chevrolet", "Beige", 18/06/23));
+		coches.add(new Coche(5210, "Chevrolet", "Beige", 03/06/23));
 		coches.add(new Coche(8541, "Suzuki", "Gris", 27/05/14));
 		coches.add(new Coche(8541, "KIA", "Rojo", 26/07/17));
 		coches.add(new Coche(8541, "KIA", "Rojo", 26/05/14));

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title th:text="${titulo}"></title>
+</head>
+<body>
+	<h1 th:text="${cabecera}"></h1>
+	<p th:text="${parrafo}"></p>
+	<table>
+		<tr>
+			<th>Id</th>
+			<th>Nombre</th>
+			<th>Autor</th>	
+		</tr>	
+		<tr th:each="libro: ${listadoLibros}">
+			<td th:text="${libro.id}"></td>
+			<td th:text="${libro.nombre}"></td>
+			<td th:text="${libro.autor}"></td>
+		</tr>
+	</table>
+</body>
+</html>

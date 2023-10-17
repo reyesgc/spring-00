@@ -1,4 +1,4 @@
-package com.midominio.evaluable2.web.app;
+package com.midominio.evaluable2.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

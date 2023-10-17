@@ -1,4 +1,4 @@
-package com.midominio.evaluable2.web.app;
+package com.midominio.evaluable2.app;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

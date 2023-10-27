@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title th:text="${titulo}"></title>
+</head>
+<body>
+	<h1 th:text="${cabecera}"></h1>
+	<p th:text="${parrafo}"></p>
+	<table border>
+		<tr>
+			<th>Nombre</th>
+			<th>Apellido</th>
+			<th>Id</th>
+		</tr>
+		<tr th:each="usuario: ${listadoUsuarios}">
+			<td th:text="${usuario.nombre}"></td>
+			<td th:text="${usuario.apellido}"></td>
+			<td th:text="${usuario.id}"></td>
+		</tr>
+	</table>
+</body>
+</html>

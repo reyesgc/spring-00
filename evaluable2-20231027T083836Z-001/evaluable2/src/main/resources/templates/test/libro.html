@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8" />
+	<title th:text="${titulo}"></title>
+</head>
+
+<body>
+<h1 th:text="${tituloH1}"></h1>
+<p th:if="${libro==null}" th:text="'No hay libro con el id ' + ${idSolicitado}"></p>
+	<ul th:if="${libro!=null}">
+		<li th:text="'Id: ' + ${libro.id}"></li>
+		<li th:text="'Nombre: ' + ${libro.nombre}"></li>
+		<li th:text="'Autor: ' + ${libro.autor}"></li>
+		<li th:text="'Tipo: ' + ${libro.tipo}"></li>
+		<li th:text="'Cantidad de libros: ' + ${libro.cantidad_libros}"></li>
+	</ul>
+</body>
+
+</html>

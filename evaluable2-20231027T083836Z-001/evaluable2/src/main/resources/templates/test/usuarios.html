@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8" />
+	<title th:text="${titulo}"></title>
+</head>
+
+<body>
+<h1 th:text="${tituloH1}"></h1>
+<p th:if="${usuario==null}" th:text="'No hay usuario con el id ' + ${idSolicitado}"></p>
+	<ul th:if="${usuario!=null}">
+		<li th:text="'Id: ' + ${usuario.id}"></li>
+		<li th:text="'Nombre: ' + ${usuario.nombre}"></li>
+		<li th:text="'Apellido: ' + ${usuario.apellidor}"></li>
+		<li th:text="'Email: ' + ${usuario.email}"></li>
+		<li th:text="'Cantidad de prestamos: ' + ${usuario.cantidad_prestamos}"></li>
+	</ul>
+</body>
+
+</html>
